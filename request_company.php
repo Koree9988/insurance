@@ -66,31 +66,36 @@
         <!-- HOME -->
         <section class="new section container" id="new">
 
-    <?php echo($_SESSION['price']); echo($_SESSION['inputTypeproduct']); ?>
+    <!-- <?php echo($_SESSION['price']); echo($_SESSION['inputTypeproduct']); ?> -->
 
         <table class="table table-striped">
   <thead>
       <h4 class="row justify-content-center">กรมธรรม์ทั้งหมด</h4>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <!-- ตรงนี้fetch data -->
-      <td>กรุงเทพประกันภัย.....</td>
-      <td class="float-right"><button type="button" class="btn btn-dark mr-3" data-toggle="modal" data-target="#detail_modal"> รายละเอียด</button><button type="button" class="btn btn-success">เลือก</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <!-- ตรงนี้fetch data -->
-      <td>กรุงเทพประกันภัย.....</td>
-      <td class="float-right" ><button type="button" class="btn btn-dark mr-3">รายละเอียด</button><button type="button" class="btn btn-success">เลือก</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <!-- ตรงนี้fetch data -->
-      <td>กรุงเทพประกันภัย.....</td>
-      <td class="float-right" ><button type="button" class="btn btn-dark mr-3">รายละเอียด</button><button type="button" class="btn btn-success">เลือก</button></td>
-    </tr>
+    <?php
+        include("config.php");
+        $pro_id = $_SESSION["inputTypeproduct"];
+        $price = $_SESSION["price"];
+        $sql = "select c.company_name,c.company_link, d.cost ,d.insurance_amount_f
+        FROM company c ,insurance_detail d
+        WHERE EXISTS(SELECT d.company_id 
+        WHERE (d.prod_id=".$pro_id." and (".$price." >=d.insurance_amount_i and ".$price." <=d.insurance_amount_f)  AND c.company_id = d.company_id) 
+        OR( d.prod_id=6 AND (".$price." >=d.insurance_amount_i and ".$price." <=d.insurance_amount_f)  AND c.company_id = d.company_id))
+        ORDER BY d.cost LIMIT 5";
+        $result = mysqli_query($conn_proc, $sql);
+        $num_rows = mysqli_num_rows($result);
+        if ($num_rows > 0) {
+            $row_count =1;
+            while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                echo "<tr><th scope='row'>" . $row_count . "</th><td>" . $row[0] . "</td><td class='float-right'><form><button type='button' class='btn btn-dark mr-3' data-toggle='modal' data-target='#detail_modal'> รายละเอียด</button> <input type='submit' class='btn btn-success btn-md ' value='เลือก' formaction='".$row[1]."'></form> </td></tr>";
+                $row_count = $row_count+1;
+            }
+        } else {
+            echo "No result.";
+        }
+        include("close_conn.php");
+    ?>
   </tbody>
 </table>
         </section>

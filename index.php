@@ -69,7 +69,7 @@
     </header>
 
     <main class="main">
-    <?php echo($_SESSION['price']); echo($_SESSION['deliver_type']); ?>
+    <?php echo($_SESSION['price']); echo($_SESSION['inputTypeproduct']); ?>
         <!-- HOME -->
         <section class="home" id="home">
             
@@ -105,69 +105,69 @@
                         <article class="new__card swiper-slide">
                             <img src="assets/img/ทิพยประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">ทิพยประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
-
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.dhipaya.co.th/th/product-detail-12-26.html'></form>
+                            
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/กรุงเทพประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">กรุงเทพประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.bangkokinsurance.com/product/marine-cargo/cargo'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/วิริยะประกันภัย.jpg" alt="" class="new__img">
                             <h3 class="insurance_title">วิริยะประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.viriyah.co.th/th/customer-product-logistic.php?id=53'></form>
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/เมืองไทยประกันภัย.jpg" alt="" class="new__img">
                             <h3 class="insurance_title">เมืองไทยประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.muangthaiinsurance.com/th/product/detail/30'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/เอ็ม เอส ไอ จี ประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">เอ็ม เอส ไอ จี ประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.msig-thai.com/th/business-insurance/inland-cargo'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/มิตรแท้ประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">มิตรแท้ประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.mittare.com/web2016/?page_id=3478&lang=th'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/คุ้มภัยโตเกียวมารีนประกันภัย.jpg" alt="" class="new__img">
                             <h3 class="insurance_title">คุ้มภัยโตเกียวมารีนประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.tokiomarine.com/th/th-general/home/commercial/marine/marine-cargo-inland-cargo-policy.html'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/นำสินประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">นำสินประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://namsengins.co.th/ประกันภัยขนส่งสินค้า/'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/ประกันคุ้มภัย.jpg" alt="" class="new__img">
                             <h3 class="insurance_title">ประกันคุ้มภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.tokiomarine.com/th/th-general/home/commercial/marine/marine-cargo-inland-cargo-policy.html'></form>
 
 
                         </article>
                         <article class="new__card swiper-slide">
                             <img src="assets/img/แอกซ่าประกันภัย.png" alt="" class="new__img">
                             <h3 class="insurance_title">แอกซ่าประกันภัย</h3>
-                            <span class="insurance_detail">short detail......</span>
+                            <form><input type='submit' class='btn btn-primary  ' value='เลือก' formaction='https://www.axa.co.th/th/marine-cargo-insurance'></form>
 
 
                         </article>
@@ -363,34 +363,49 @@
                             </div>
 
                             <div class="form-group">
-                                <label for=".....-text" class="col-form-label">ประเภทการจัดส่ง (ทางเรือ &
-                                    ทางอากาศ)</label>
-                                <input type="text" class="form-control" id="deliver_type" name="deliver_type" required>
+                                <label for=".....-text" class="col-form-label">ประเภทการจัดส่ง</label>
+                                <input type="text" class="form-control" id="deliver_type" name="deliver_type" placeholder=" (ทางบก/ทางเรือ/ทางอากาศ)">
                             </div>
 
                             <div class="form-group type_product">
                                 <label for="inputTypeproduct">ประเภทสินค้า</label>
-                                <select id="inputTypeproduct" class="form-control" name = "inputTypeproduct">
-                                    <option selected>ประเภทสินค้า...</option>
-
-                                    <?php 
-                                        require_once 'config.php';
-                                        $sql = $db->prepare("SELECT * FROM `product_type` WHERE product_type_name != 'ไม่ระบุ'");
-                                        $sql->execute();
-                                        $rs = $sql->fetchAll();
-                                    ?>
-
-                                    <?php 
-                                        foreach($rs as $row) { ?>
-                                        <option value="<?=$row['product_id']; ?>"><?=$row['product_type_name'];?></option>
-                                        <?php } ?>
-
-                                </select>
+                                <input type="text" id="inputTypeproduct" class="form-control" name = "inputTypeproduct">
+                                <!-- <select id="inputTypeproduct" class="form-control" name = "inputTypeproduct"> -->
+                                    <!-- <option selected>ประเภทสินค้า...</option> -->
+                                <!-- </select> -->
                             </div>
 
                             <div class="form-group">
                                 <label for=".....-text" class="col-form-label">ราคาสินค้าโดยประมาณ</label>
                                 <input type="text" class="form-control" id="price_product" name="price" required>
+                            </div>
+                            <div class="form-group">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="justify-content-center">No.</th>
+                                            <th class="justify-content-center">การแบ่งประเภทสินค้า</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        require_once 'config.php'; 
+                                        $sql = "select * from product_type where product_id != 6 ";
+                                        $result = mysqli_query($conn_proc, $sql);
+                                        $num_rows = mysqli_num_rows($result);
+                                        if ($num_rows > 0) {
+                                            while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                                                // var_dump($row[0]);
+                                                echo "<tr><th>".$row[0]."</th><td>".$row[1]."</td></tr>";
+                                        
+                                            }
+                                        } else {
+                                            echo "No result.";
+                                        }
+                                        include("close_conn.php");
+                                    ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
